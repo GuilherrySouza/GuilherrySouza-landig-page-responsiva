@@ -1,0 +1,671 @@
+/* Importando Fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Righteous&display=swap');
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+/* Estilos Globais */
+body {
+    font-family:"Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f1f6fc;
+}
+
+section,
+footer {
+    padding: 54px 0;
+}
+
+h3 {
+    font-size: 50px;
+}
+
+p {
+    color: #0000009c;
+}
+
+.logo {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 1%;
+    font-size:  19px;
+}
+
+.btn {
+    background-color: #4f9cf9;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+}
+
+/* Botão Aplicar */
+.btn-aplicar {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: #fff;
+    background: transparent;
+}
+
+.btn.animate-btn {
+    animation: animate-outline 1s ease-out infinite;
+}
+
+.btn:hover {
+    background-color: #3580db;
+}
+
+.btn-aplicar:hover {
+    background-color: #3580db;
+}
+
+@keyframes animate-outline {
+    from {
+        outline: 0px solid #4f9bf98a;
+    }
+    to {
+        outline: 15px solid rgba(79, 155, 249, 0);
+    }
+}
+
+/* Header */
+header {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2px; /* Reduz a distância entre os itens */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+nav ul a {
+    color: white;
+    margin: 0 12px;
+    text-transform: uppercase;
+    font-size: 17px;
+    display: block;
+    position: relative;
+    font-size: 16px;
+    padding: 1px 9px; /* Dá um espaço interno para não ficarem grudados */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+nav ul a:not(.btn-aplicar)::after {
+    content: "";
+    background-color: #4f9cf9;
+    height: 3px;
+    width: 0;
+    display: block;
+    transition: width 0.3s ease;
+}
+
+nav ul a:hover::after {
+    width: 100%;
+}
+nav .menu-icon {
+    display: none; /* Esconde o ícone em telas grandes */
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.menu-icon {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Hero */
+.herop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 0 90px;
+}
+.herop .hero-projetos {
+    max-width: 800px;
+}
+
+.herop .hero-projetos h1 {
+    font-size: 50px;
+    color: #ffffffb7;
+}
+
+.herop .hero-projetos p {
+    font-size: 20px;
+    color: #ffffffb7;
+    font-weight: lighter;
+    margin: 18px 0;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 0 90px;
+}
+
+.hero .hero-content {
+    max-width: 800px;
+}
+
+.hero .hero-content h1 {
+    font-size: 96px;
+    color: white;
+}
+
+.hero .hero-content p {
+    font-size: 20px;
+    color: #ffffffb7;
+    font-weight: lighter;
+    margin: 18px 0;
+}
+
+/* Galeria de Projetos */
+.galeria {
+    padding: 4rem 2rem;
+    background-color: #111;
+    text-align: center;
+}
+
+.galeria h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.projetos-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.projeto-item {
+    background-color: #222;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.projeto-item:hover {
+    transform: scale(1.05);
+}
+
+.projeto-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.projeto-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.projeto-item p {
+    color: #aaa;
+}
+/*Sobre */
+.sobret {
+    padding: 1rem 2rem;
+    background-color: #111;
+    text-align: center;
+    min-height: 100vh; /* Faz com que a seção ocupe a altura toda da tela */
+}
+.sobret h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+/* Cor do primeiro texto */
+.sobre-text p:first-child {
+    color:  hsl(0, 4%, 57%); /* Cor padrão */
+    font-size: 17px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Cor da segunda linha (Parceiro Oficial) */
+.sobre-text .sobresub-text {
+    color: hsl(0, 4%, 57%); /* Azul */
+    text-align: center;
+    font-size: 17px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.sobre-logo {
+    width: 150%; /* Ocupa toda a largura disponível */
+    max-width: 300px; /* Define um tamanho máximo */
+    height: auto;
+}
+
+/* Equipe */
+.equipes {
+    padding: 1rem 0;  /* Remove o padding lateral para ocupar toda a largura */
+    background-color: #111;
+    text-align: center;
+    min-height: 100vh; /* Faz com que a seção ocupe a altura toda da tela */
+    margin: 0; /* Remove qualquer margem que possa estar reduzindo a largura */
+    padding-top: 100px;
+}
+
+.equipe h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.equipe-completas {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Alterado de 250px para 300px */
+    margin-top: 100px;
+    justify-content: center;
+}
+
+.equipe-completa {
+    background-color: #222;
+    padding: 1.3rem; /* Reduz o espaçamento interno */
+    max-width: 400px; /* Define uma largura máxima */
+    border-radius: 8px; /* Suaviza os cantos */
+    text-align: center;
+    transition: transform 0.3s;
+    margin: auto; /* Centraliza no contêiner */
+}
+
+.equipe-completa:hover {
+    transform: scale(1.05);
+}
+
+.equipe-completa img {
+    width: 100%;
+    border-radius: 1px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    position: center;
+}
+
+.equipe-completa h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #aaa;
+    position: center;
+}
+
+.equipe-completa p {
+    color: #aaa;
+    font-size: 0.9rem;
+
+}
+.instagram-link {
+    display: inline-block;
+    margin-top: 0.1rem; /* Espaço entre o texto e o ícone */
+}
+
+.instagram-link img {
+    width: 24px; /* Tamanho do ícone */
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.instagram-link img:hover {
+    transform: scale(1.2); /* Efeito ao passar o mouse */
+}
+
+/* Galeria de todos Projetos */
+.galeriat {
+    padding: 1rem 2rem;
+    background-color: #111;
+    text-align: center;
+    min-height: 100vh; /* Faz com que a seção ocupe a altura toda da tela */
+}
+
+.galeriat h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.projetos-gridt {
+    display: grid;
+    gap: 1.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Alterado de 250px para 300px */
+}
+
+.projeto-itemt {
+    background-color: #222;
+    padding: 1rem;
+    border-radius: 3px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.projeto-itemt:hover {
+    transform: scale(1.05);
+}
+
+.projeto-itemt img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.projeto-itemt h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.projeto-itemt p {
+    color: #aaa;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer-content {
+    color: white;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 19px; /* Espaço entre logo e texto */
+    background-color: #333;
+    padding: 20px;
+    color: white;
+
+}
+.footer-logo {
+    max-height: 50px;
+    width: auto;
+}
+
+/* Cor do primeiro texto */
+.footer-text p:first-child {
+    color:  hsl(0, 4%, 57%); /* Cor padrão */
+}
+
+/* Cor da segunda linha (Parceiro Oficial) */
+.footer-text .sub-text {
+    color: hsl(0, 4%, 57%); /* Azul */
+    text-align: center;
+}
+
+.trabalhe-conosco {
+    background-color: #222;
+    text-align: center;
+    padding: 4rem 2 rem;
+    color: hsl(0, 4%, 57%);
+}
+.trabalhe-conosco .juntos{
+    color: hsl(0, 4%, 57%)
+
+}
+.trabalhe-conosco h3 {
+    color: #1e73db; /*Azul para o "CONTATO" */
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.trabalhe-conosco h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.btn-trabalhar {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #0099ff; /* Azul do botão */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Espaço acima das imagens */
+}
+.btn-trabalhar:hover {
+    background-color: #0077cc; /* Azul mais escuro no hover */
+}
+
+.redes-sociais{
+    background-color: #383838;
+    text-align: center;
+    padding: 1rem;
+
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    font-size: 24px;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+.social-links a:hover {
+    transform: rotate(10deg) scale(1.2);
+}
+
+.social-links a:hover {
+    color: #4f9cf9; /* Azul ao passar o mouse */
+}
+
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* clientes */
+
+.clientes{
+    padding: 4rem 2rem;
+    background-color: #111;
+    text-align: center;
+    
+}
+.clientes h3{
+    color: #1e73db; /*Azul para o "CONTATO" */
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.clientes h2{
+    color:  hsl(0, 4%, 57%);
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+
+.clientes p{
+    margin-bottom: 20px;
+    text-align: center;
+    color:  hsl(0, 4%, 57%);
+
+}
+.clientes .container div{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bounce-in 1s ease-in-out;
+    gap: 5px; /* Espaço entre as imagens */
+    margin-top: 20px; /* Espaço acima das imagens */
+}
+.clientes .container div img{
+    transition: transform 0.3s ease-in-out;
+}
+.clientes .container div img:hover {
+    transform: scale(1.1);
+}
+/* Estilos Responsivos */
+
+/* Ajustes para telas menores que 768px (tablets e celulares grandes) */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul a {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .hero .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .hero .hero-content p {
+        font-size: 16px;
+    }
+
+    .galeria h2 {
+        font-size: 2rem;
+    }
+
+    .projetos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .clientes .container div {
+        flex-direction: column;
+    }
+    .menu-icon {
+        display: block; /* Exibe o ícone no mobile */
+    }
+}
+
+/* Ajustes para telas menores que 480px (celulares pequenos) */
+@media (max-width: 480px) {
+    h3 {
+        font-size: 36px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+    }
+
+    .hero .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero .hero-content p {
+        font-size: 14px;
+    }
+
+    .projetos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.menu {
+    list-style: none; 
+    list-style-type: none !important;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Mantém o menu visível no desktop */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+.menu li {
+    display: inline-block; /* Garante que os itens fiquem lado a lado */
+}
+.menu {
+    
+    list-style-type: none !important;
+    padding: 0;
+    margin: 0;
+}
+.menu.show {
+    display: flex; /* Exibe o menu quando ativado */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: right;
+    border-radius: 10px;
+}
+.menu-icon {
+    display: none; /* Esconde no desktop */
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
