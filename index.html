@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Righteous&display=swap" rel="stylesheet">
@@ -17,10 +17,10 @@
     <header style="background-image: url('img/background-home.png')">   
         <div class="logo"> 
             <nav>
-                <a href="Bubble.html">
+                <a href="index.html">
                     <img src="img/logooficial.png" alt="Logo">
                 </a>
-                <ul class="menu">
+                <ul class="menu-desktop" id="menu">
                     <li><a href="index.html">INÍCIO</a></li>
                     <li><a href="sobre.html">SOBRE</a></li>
                     <li><a href="projetos.html">PROJETOS</a></li>
@@ -28,10 +28,8 @@
                     <li><a href="#contato">CONTATO</a></li>
                     <li><a href="aplicar.html" class="btn-aplicar">APLICAR</a></li>
                 </ul>
-                <div class="menu-icon" onclick="toggleMenu()">
-                    <i class="fa fa-bars"></i> <!-- Ícone de "hambúrguer" -->
-                </div>
             </nav>
+            </div>
         </div>
     <!-- Seção Principal com Imagem de Fundo -->
     <section class="hero">
@@ -39,7 +37,7 @@
             <h1>Bubble Creators</h1>
             <p> Publicadores e Criadores no Minecraft: desenvolvendo conteúdos exclusivos para o Minecraft Marketplace, inovando com addons, mapas e texturas, e compartilhando experiências imersivas para a comunidade global do jogo.</p>
 
-        </div>>
+        </div>
     </section>
 </header>
     <!-- Galeria de Projetos -->
@@ -95,19 +93,19 @@
         <div class="social-links">
           <!-- Redes Sociais -->
         <div class="social-links">
-            <a href="https://facebook.com/seu_perfil" target="_blank">
+            <a href="https://www.instagram.com/guilherry.s/" target="_blank">
                 <img src="img/yt.png" alt="Youtuber" width="24">
             </a>
-            <a href="https://instagram.com/seu_perfil" target="_blank">
+            <a href="https://www.instagram.com/guilherry.s/" target="_blank">
                 <img src="img/insta.png" alt="Instagram" width="24">
             </a>
-            <a href="https://twitter.com/seu_perfil" target="_blank">
+            <a href="https://www.instagram.com/guilherry.s/" target="_blank">
                 <img src="img/twtter.png" alt="Twitter" width="24">
             </a>
-            <a href="https://linkedin.com/in/seu_perfil" target="_blank">
+            <a href="https://www.instagram.com/guilherry.s/" target="_blank">
                 <img src="img/link.png" alt="LinkedIn" width="24">
             </a>
-            <a href="https://linkedin.com/in/seu_perfil" target="_blank">
+            <a href="https://www.instagram.com/guilherry.s/" target="_blank">
                 <img src="img/discord.png" alt="Discord" width="24">
             </a>
         </div>
@@ -124,6 +122,12 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("active");
+        }
+        </script>
 
 </body>
 </html>

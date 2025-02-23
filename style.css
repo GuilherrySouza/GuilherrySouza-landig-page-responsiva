@@ -79,7 +79,7 @@ p {
 /* Header */
 header {
     background-position: center;
-    background-size: cover;
+    background-size: 100% auto;
     background-attachment: fixed;
 }
 
@@ -124,20 +124,14 @@ nav ul a:not(.btn-aplicar)::after {
 nav ul a:hover::after {
     width: 100%;
 }
-nav .menu-icon {
-    display: none; /* Esconde o ícone em telas grandes */
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-}
+
+/* MOBILE */
 .menu-icon {
+    display: none;
     font-size: 30px;
-    color: white;
     cursor: pointer;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
+    color: white;
+    padding: 10px;
 }
 
 /* Hero */
@@ -188,6 +182,36 @@ nav .menu-icon {
     color: #ffffffb7;
     font-weight: lighter;
     margin: 18px 0;
+}
+
+/*Aplica-se */
+
+.hero-aplicar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 0 90px;
+}
+
+.hero-aplicar .hero-content-aplicar {
+    max-width: 800px;
+}
+
+.hero-aplicar .hero-content-aplicar h1 {
+    font-size: 35px;
+    color: white;
+}
+
+.hero-aplicar .hero-content-aplicar p {
+    font-size: 20px;
+    color: #ffffffb7;
+    font-weight: lighter;
+    margin: 15px 0;
+    max-width: 800px;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* Galeria de Projetos */
@@ -529,8 +553,6 @@ footer {
     font-weight: bold;
     margin: 10px 0;
 }
-
-
 .clientes p{
     margin-bottom: 20px;
     text-align: center;
@@ -556,14 +578,26 @@ footer {
 
 /* Ajustes para telas menores que 768px (tablets e celulares grandes) */
 @media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-        font-size: 24px;
-        color: white;
-        cursor: pointer;
+    .menu-desktop {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .menu-desktop.active {
+        display: flex;
     }
 
-    nav {
+    .menu-desktop li {
+        padding: 15px 0;
+    }
+        .menu-icon {
+        display: block;
+    }
+   nav {
         flex-direction: column;
         text-align: center;
     }
@@ -602,9 +636,6 @@ footer {
     .clientes .container div {
         flex-direction: column;
     }
-    .menu-icon {
-        display: block; /* Exibe o ícone no mobile */
-    }
 }
 
 /* Ajustes para telas menores que 480px (celulares pequenos) */
@@ -629,43 +660,155 @@ footer {
         grid-template-columns: 1fr;
     }
 }
-.menu {
-    list-style: none; 
-    list-style-type: none !important;
+.menu-desktop {
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex; /* Mantém o menu visível no desktop */
     gap: 20px; /* Espaçamento entre os itens */
+    
+}
+/* Quando o menu está ativo (aberto) */
+.menu-desktop.active {
+    right: 0;
+}
+/* Ícone do menu para abrir e fechar */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1000; /* Garante que o botão fique acima do menu */
+}
+/* Botão para fechar o menu */
+.menu-close {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    text-align: right;
 }
 
-.menu li {
+
+.menu-desktop li {
     display: inline-block; /* Garante que os itens fiquem lado a lado */
 }
-.menu {
-    
-    list-style-type: none !important;
-    padding: 0;
-    margin: 0;
-}
-.menu.show {
-    display: flex; /* Exibe o menu quando ativado */
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    background: rgba(0, 0, 0, 0.8);
+
+.form-container {
+    background-color: rgba(221, 221, 221, 0.9); /* Fundo semi-transparente */
     padding: 20px;
-    text-align: right;
     border-radius: 10px;
+    width: 40%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-.menu-icon {
-    display: none; /* Esconde no desktop */
-    font-size: 30px;
+
+h2 {
+    font-family: 'Righteous', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 8px 0 4px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #003366;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 12px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px;
+    width: 100%;
+    background-color: #003366;
     color: white;
+    border: none;
     cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0055aa;
+}
+
+.form-content {
+    margin: 0;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Garante que ocupe a tela inteira */
+    background-repeat: no-repeat;
+    background-size: cover; /* Garante que a imagem de fundo ocupe toda a tela */
+}
+
+/* Estilização do container do formulário */
+.form-container {
+    width: 80%; /* Usa um valor percentual para melhor responsividade */
+    max-width: 600px; /* Mantém um limite máximo */
+    padding: 20px;
+    background-color: #d9d9d9; /* Mesma cor do fundo */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para destacar */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Título */
+h2 {
+    font-family: 'Righteous', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+/* Inputs e textarea */
+input, textarea {
+        width: 100%;
+        padding: 10px;
+        border: 3px solid #003366; /* Borda azul escuro */
+        background-color: white;
+        font-size: 14px;
+        font-family: 'Press Start 2P', cursive;
+}
+
+/* Botão */
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #003366; /* Azul escuro */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #0055aa;
 }
