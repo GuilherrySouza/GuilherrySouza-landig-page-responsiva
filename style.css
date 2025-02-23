@@ -78,9 +78,10 @@ p {
 
 /* Header */
 header {
-    background-position: center;
-    background-size: 100% auto;
-    background-attachment: fixed;
+    background-size: cover; /* Faz a imagem cobrir toda a tela sem repetir */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-position: center center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página */
 }
 
 nav {
